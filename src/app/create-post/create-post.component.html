@@ -1,0 +1,62 @@
+<div class="create-card">
+  <div class="title">
+    <h4 class="">Create a Post</h4>
+    <button class="btn-primary" mat-raised-button routerLink="/main">
+      Back
+    </button>
+  </div>
+  <form
+    [formGroup]="createPostForm"
+    (ngSubmit)="onSubmit()"
+    novalidate
+    class="d-flex-center"
+  >
+    <div class="example-container">
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="Title" formControlName="title" />
+          <mat-error
+            *ngIf="
+              createPostForm.get('title')?.invalid &&
+              (createPostForm.get('title')?.dirty ||
+                createPostForm.get('title')?.touched) &&
+              createPostForm.get('title')?.errors?.required
+            "
+          >
+            Title is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="mt-top-2">
+        <mat-form-field>
+          <textarea
+            matInput
+            type="body"
+            placeholder="body"
+            formControlName="body"
+          ></textarea>
+          <mat-error
+            *ngIf="
+              createPostForm.get('body')?.invalid &&
+              (createPostForm.get('body')?.dirty ||
+                createPostForm.get('body')?.touched) &&
+              createPostForm.get('body')?.errors?.required
+            "
+          >
+            Body is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="mt-top">
+        <button
+          [disabled]="!createPostForm.valid"
+          mat-raised-button
+          color="primary"
+          mat-button
+        >
+          Submit
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

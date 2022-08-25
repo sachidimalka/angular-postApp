@@ -1,0 +1,43 @@
+.main-page{
+    margin: 100px 20px 20px 20px;
+}
+
+table {
+    width: 100%;
+    th,td,tr{
+        text-align: center;
+    }
+  }
+
+  .row-data{
+    align-items: center;
+    max-width: 300px;
+    padding: 10px;
+  }
+
+  .action-row{
+    display: flex;
+    flex-direction: row;
+    gap:10px;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+   
+  }
+  .btn-info{
+    background: rgb(33, 153, 238);
+    color:white;
+}
+.btn-primary{
+    background: rgb(25, 87, 246);
+    color:white;
+}
+.btn-danger{
+    background: rgb(197, 50, 50);
+    color:white;
+}
+.btn-success{
+    background: rgb(28, 119, 52);
+    color:white;
+    margin-bottom: 20px;
+}
